@@ -22,7 +22,7 @@ El gobierno de la cuidad quiere actualizar los semáforos que tiene instalados. 
 - Durante el led verde, la bocina no sonará.
 
 ## Funcion principal
-
+(A realizar.)
 ## Link del proyecto
 - [Proyecto](https://www.tinkercad.com/things/h1WbVGTJFAf-grand-densor-waasa/editel?sharecode=C3tvJ0Ume2fuXef_dnFmbzlkv2UEg20soz0jSeXPr8g)
 ## Fuentes
