@@ -1,0 +1,61 @@
+// Dojo Número Uno
+
+# define LED_ROJO 13
+# define LED_AMARILLO 12
+# define LED_VERDE 11
+# define BUZZER 9
+
+int contador = 0;
+
+void setup()
+{
+  pinMode(LED_ROJO, OUTPUT);  
+  pinMode(LED_AMARILLO, OUTPUT);
+  pinMode(LED_VERDE, OUTPUT);
+  pinMode(BUZZER, OUTPUT);
+}
+
+void loop()
+{
+  
+  // Led Rojo dura 30 segundos.
+  digitalWrite(LED_ROJO, HIGH);
+  while (contador < 30)
+  {
+    tone(BUZZER, 500, 500);
+    delay (1000);
+    contador += 1;
+  }
+  digitalWrite(LED_ROJO, LOW);
+  delay(500);
+  
+  // Led amarillo dura 5 segundos.
+  digitalWrite(LED_AMARILLO, HIGH); 
+  contador = 0;
+  while (contador < 2)
+  {
+    tone(BUZZER, 1500, 500);
+    delay (2500);
+    contador += 1;
+  }
+  digitalWrite(LED_AMARILLO, LOW);
+  delay(500);
+  
+  // Led verde dura 45 segundos.
+  digitalWrite(LED_VERDE, HIGH);
+  delay(45000); 
+  digitalWrite(LED_VERDE, LOW);
+  delay(500); 
+  
+  // Led amarillo dura 5 segundos otra vez.
+  digitalWrite(LED_AMARILLO, HIGH);
+  contador = 0;
+  while (contador < 2)
+  {
+    tone(BUZZER, 2000, 500);
+    delay (2500);
+    contador += 1;
+  }
+  digitalWrite(LED_AMARILLO, LOW);
+  delay(500);
+}
