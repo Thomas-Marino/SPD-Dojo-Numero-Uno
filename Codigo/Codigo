@@ -1,4 +1,4 @@
-// Dojo Número Uno
+// Dojo Número Uno.
 
 # define LED_ROJO 13
 # define LED_AMARILLO 12
@@ -6,6 +6,51 @@
 # define BUZZER 9
 
 int contador = 0;
+// ========== FUNCION PARA ENCENDER LEDS ==========
+void encender_led(int led_recibido)
+{
+  digitalWrite(led_recibido, HIGH);
+}
+// ========== FUNCION PARA APAGAR LEDS ==========
+void apagar_led(int led_recibido, float pausa_recibida)
+{
+  digitalWrite(led_recibido, LOW);
+  delay(pausa_recibida);
+}
+// ========== FUNCION PARA ENCENDER BUZZER ==========
+void encender_buzzer(int frecuencia_recibida, int vueltas_recibidas, int pausa_recibida)
+{
+  contador = 0;
+  while (contador < vueltas_recibidas)
+  {
+    tone(BUZZER, frecuencia_recibida, 500);
+    delay (pausa_recibida);
+    contador += 1;
+  }
+}
+// ========== FUNCION PRINCIPAL ==========
+void ejecutar_proceso()
+{
+  // ========= Led Rojo =========
+  encender_led(LED_ROJO);
+  // Llamado a funcion encender_buzzer ejecutando 30 vueltas cada 1 segundo, es decir que durará 30 segundos encendido 
+  encender_buzzer(500, 30, 1000); 
+  apagar_led(LED_ROJO, 0.75);
+  // ========= Led Amarillo =========
+  encender_led(LED_AMARILLO); 
+  // Llamado a funcion encender_buzzer ejecutando 2 vueltas cada 2,5 segundos, es decir que durará 5 segundos encendido
+  encender_buzzer(1500, 2, 2500); 
+  apagar_led(LED_AMARILLO, 0.75);
+  // ========= Led Verde =========
+  encender_led(LED_VERDE);
+  delay(45000); 
+  apagar_led(LED_VERDE, 0.75);
+  // ========= Led Amarillo =========
+  encender_led(LED_AMARILLO);
+  // Llamado a funcion encender_buzzer ejecutando 2 vueltas cada 2,5 segundos, es decir que durará 5 segundos encendido
+  encender_buzzer(1500, 2, 2500); 
+  apagar_led(LED_AMARILLO, 0.75);
+}
 
 void setup()
 {
@@ -17,45 +62,5 @@ void setup()
 
 void loop()
 {
-  
-  // Led Rojo dura 30 segundos.
-  digitalWrite(LED_ROJO, HIGH);
-  while (contador < 30)
-  {
-    tone(BUZZER, 500, 500);
-    delay (1000);
-    contador += 1;
-  }
-  digitalWrite(LED_ROJO, LOW);
-  delay(500);
-  
-  // Led amarillo dura 5 segundos.
-  digitalWrite(LED_AMARILLO, HIGH); 
-  contador = 0;
-  while (contador < 2)
-  {
-    tone(BUZZER, 1500, 500);
-    delay (2500);
-    contador += 1;
-  }
-  digitalWrite(LED_AMARILLO, LOW);
-  delay(500);
-  
-  // Led verde dura 45 segundos.
-  digitalWrite(LED_VERDE, HIGH);
-  delay(45000); 
-  digitalWrite(LED_VERDE, LOW);
-  delay(500); 
-  
-  // Led amarillo dura 5 segundos otra vez.
-  digitalWrite(LED_AMARILLO, HIGH);
-  contador = 0;
-  while (contador < 2)
-  {
-    tone(BUZZER, 2000, 500);
-    delay (2500);
-    contador += 1;
-  }
-  digitalWrite(LED_AMARILLO, LOW);
-  delay(500);
+  ejecutar_proceso();
 }
