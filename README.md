@@ -71,7 +71,7 @@ void encender_buzzer(int frecuencia_recibida, int vueltas_recibidas, int pausa_r
 }
 ~~~
 ## Link del proyecto
-- [Proyecto](https://www.tinkercad.com/things/h1WbVGTJFAf-grand-densor-waasa/editel?sharecode=C3tvJ0Ume2fuXef_dnFmbzlkv2UEg20soz0jSeXPr8g)
+- [Proyecto](https://www.tinkercad.com/things/h1WbVGTJFAf)
 ## Fuentes
 - [Formato para hacer el readme](https://github.com/Estebamq/EjemploDocumentacion/blob/main/README.md)
 - [Como aprendimos a conectar el buzzer](https://www.tinkercad.com/things/bBK1SUiRnVm-buzzer)
